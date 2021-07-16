@@ -6,7 +6,7 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var backgroundImg;
 
-var bg ;
+var bg, hr ;
 
 function preload() {
     
@@ -34,12 +34,12 @@ function draw(){
     fill("black");
     textSize(30);
 
-    if(hour>=12){
-        text("Time : "+ hour%12 + " PM", 50,100);
-       }else if(hour==0){
+    if(hr>=12){
+        text("Time : "+ hr%12 + " PM", 50,100);
+       }else if(hr==0){
          text("Time : 12 AM",100,100);
        }else{
-        text("Time : "+ hour%12 + " AM", 50,100);
+        text("Time : "+ hr%12 + " AM", 50,100);
        }
 
 
@@ -52,7 +52,7 @@ async function getBackgroundImg(){
     console.log(responseType)
     var dt = responseType.datetime;
     console.log(dt)
-    var hr = dt.slice(11,13);
+     hr = dt.slice(11,13);
     console.log(hr)
 
     if(hr>=4 && hr<=6)
